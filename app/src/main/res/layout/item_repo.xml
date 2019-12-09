@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/repo_name_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Android Architecture Components samples" />
+
+    <TextView
+        android:id="@+id/repo_description_textView"
+        android:layout_width="290dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repo_name_textView"
+        tools:text="Samples for Android Architecture Components. https://d.android.com/arch " />
+
+    <TextView
+        android:id="@+id/language_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/repo_description_textView"
+        tools:text="Python" />
+
+    <ImageView
+        android:id="@+id/star_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/language_textView"
+        app:layout_constraintStart_toEndOf="@+id/language_textView"
+        app:layout_constraintTop_toBottomOf="@+id/language_textView"
+        app:srcCompat="@drawable/ic_star_black_24dp"
+        android:contentDescription="@string/startgaze_content_decription" />
+
+    <TextView
+        android:id="@+id/owner_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/owner_label"
+        app:layout_constraintBottom_toTopOf="@+id/stargaze_count_textView"
+        app:layout_constraintStart_toEndOf="@+id/stargaze_count_textView"
+        app:layout_constraintTop_toBottomOf="@+id/stargaze_count_textView" />
+
+    <TextView
+        android:id="@+id/owner_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/owner_label"
+        app:layout_constraintStart_toEndOf="@+id/owner_label"
+        app:layout_constraintTop_toBottomOf="@+id/owner_label"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/stargaze_count_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/star_image"
+        app:layout_constraintStart_toEndOf="@+id/star_image"
+        app:layout_constraintTop_toBottomOf="@+id/star_image"
+        tools:text="2200" />
+</androidx.constraintlayout.widget.ConstraintLayout>

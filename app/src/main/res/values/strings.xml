@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GitHubSampleApp</string>
+    <string name="owner_label">Owner:</string>
+    <string name="startgaze_content_decription">Star icon to visually show number of stars of a repository</string>
 </resources>
