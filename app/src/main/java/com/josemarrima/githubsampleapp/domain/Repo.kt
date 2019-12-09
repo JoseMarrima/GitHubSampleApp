@@ -8,7 +8,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 @Entity
 data class Repo(@PrimaryKey val id: Long,
-                val nameRepo: String,
-                val description: String,
-                val language: String,
-                val stargazersCount: Long): Parcelable
+                val nameRepo: String?,
+                val description: String?,
+                val language: String?,
+                val stargazersCount: Long?): Parcelable

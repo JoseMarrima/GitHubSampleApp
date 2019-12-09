@@ -6,5 +6,5 @@ import retrofit2.http.Query
 
 interface RepoService {
     @GET("search/repositories?sort=stars")
-    suspend fun searchListRepo(@Query("q") query: String): GitHubResponse
+    suspend fun getAsyncListRepo(@Query("q") query: String): GitHubResponse
 }

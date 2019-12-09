@@ -1,7 +1,7 @@
 package com.josemarrima.githubsampleapp.repoDetails
 
 import androidx.lifecycle.ViewModel
+import javax.inject.Inject
 
-class RepoDetailsViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+class RepoDetailsViewModel @Inject constructor() : ViewModel() {
 }

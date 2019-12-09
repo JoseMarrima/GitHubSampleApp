@@ -20,7 +20,7 @@
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:onClick="@{() -> clickListener.onClick(comic)}"
+            android:onClick="@{() -> clickListener.onClick(repo)}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -32,6 +32,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:textSize="18sp"
+                android:text="@{repo.nameRepo}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Android Architecture Components samples" />
@@ -42,6 +43,7 @@
                 android:layout_height="55dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:text="@{repo.description}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/repo_name_textView"
                 tools:text="Samples for Android Architecture Components. https://d.android.com/arch " />
@@ -53,6 +55,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="16dp"
+                android:text="@{repo.language}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/repo_description_textView"
@@ -94,6 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:text="@{repo.stargazersCount.toString()}"
                 app:layout_constraintBottom_toTopOf="@+id/star_image"
                 app:layout_constraintStart_toEndOf="@+id/star_image"
                 app:layout_constraintTop_toBottomOf="@+id/star_image"
