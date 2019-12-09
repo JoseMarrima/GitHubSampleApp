@@ -6,28 +6,34 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 
 import com.josemarrima.githubsampleapp.R
+import com.josemarrima.githubsampleapp.databinding.ListRepoFragmentBinding
 
 class ListRepoFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = ListRepoFragment()
-    }
-
     private lateinit var viewModel: ListRepoViewModel
+
+    private val adapter = ListRepoAdapter(ClickListener {
+        this.findNavController().navigate(ListRepoFragmentDirections
+            .actionListRepoFragmentToRepoDetailsFragment(it))
+    })
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.list_repo_fragment, container, false)
-    }
+        val binding: ListRepoFragmentBinding = DataBindingUtil.inflate(
+            inflater, R.layout.list_repo_fragment, container, false)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+        binding.lifecycleOwner = this
+
+        binding.listItemRv.adapter = adapter
+
         viewModel = ViewModelProviders.of(this).get(ListRepoViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
 
+        return binding.root
+    }
 }
